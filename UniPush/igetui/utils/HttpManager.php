@@ -1,4 +1,6 @@
 <?php
+namespace UniPush\Igetui\Template\Utils;
+
 /**
  * Created by PhpStorm.
  * User: Administrator

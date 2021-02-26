@@ -1,4 +1,5 @@
 <?php 
+namespace UniPush\Igetui;
 
 class IGtTarget{
 	var  $appId;

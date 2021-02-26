@@ -1,4 +1,5 @@
 <?php
+namespace UniPush\Igetui\Template;
 
 require_once(dirname(__FILE__) . '/' . '../utils/ApnsUtils.php');
 require_once(dirname(__FILE__) . '/' . '../IGt.APNPayload.php');

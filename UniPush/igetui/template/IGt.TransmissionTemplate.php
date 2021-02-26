@@ -1,4 +1,6 @@
 <?php
+namespace UniPush\Igetui\Template;
+
 class IGtTransmissionTemplate extends IGtBaseTemplate {
 
 	var $transmissionType;

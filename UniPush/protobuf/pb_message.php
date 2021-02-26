@@ -1,4 +1,7 @@
 <?php
+
+namespace UniPush\Protobuf;
+
 /**
  * Including of all files needed to parse messages
  * @author Nikolai Kordulla

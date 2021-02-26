@@ -1,4 +1,5 @@
 <?php
+namespace UniPush\Protobuf\Reader;
 /**
  * Abstract class for an input reader
  */

@@ -1,5 +1,6 @@
  <?php
-
+ namespace UniPush\Igetui\Template;
+ 
 /**
  * Created by PhpStorm.
  * User: zqzhao5

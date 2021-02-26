@@ -1,4 +1,7 @@
 <?php
+
+namespace UniPush\Igetui;
+
 class CmdID extends PBEnum
 {
   const GTHEARDBT  = 0;

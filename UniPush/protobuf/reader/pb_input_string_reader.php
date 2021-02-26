@@ -1,4 +1,7 @@
 <?php
+
+namespace UniPush\Protobuf\Reader;
+
 /**
  * Reads string input
  */

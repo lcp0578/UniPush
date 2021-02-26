@@ -1,4 +1,8 @@
 <?php
+namespace UniPush\Protobuf\Type;
+
+use UniPush\Protobuf\PBMessage;
+
 /**
  * @author Nikolai Kordulla
  */

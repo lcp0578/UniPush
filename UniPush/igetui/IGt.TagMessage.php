@@ -1,4 +1,7 @@
 <?php
+
+namespace UniPush\Igetui;
+
 header("Content-Type: text/html; charset=utf-8");
 class IGtTagMessage extends IGtMessage{
 

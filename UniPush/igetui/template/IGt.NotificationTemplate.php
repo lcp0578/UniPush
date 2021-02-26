@@ -1,4 +1,5 @@
 <?php 
+namespace UniPush\Igetui\Template;
 
 class IGtNotificationTemplate extends IGtBaseTemplate {
 

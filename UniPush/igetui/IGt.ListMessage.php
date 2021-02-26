@@ -1,4 +1,5 @@
 <?php 
+namespace UniPush\Igetui;
 
 class IGtListMessage extends IGtMessage{
 	

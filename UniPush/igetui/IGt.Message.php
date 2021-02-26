@@ -1,4 +1,5 @@
 <?php 
+namespace UniPush\Igetui;
 
 class IGtMessage{
 	var  $isOffline;

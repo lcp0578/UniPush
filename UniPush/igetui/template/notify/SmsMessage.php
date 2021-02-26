@@ -1,4 +1,6 @@
 <?php
+namespace UniPush\Igetui\Template\Notify;
+
 /**
  * Created by IntelliJ IDEA.
  * User: mawen6558922

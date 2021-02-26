@@ -1,4 +1,13 @@
 <?php
+
+namespace UniPush;
+use UniPush\Igetui\Template\Utils\GTConfig;
+use UniPush\Igetui\Template\Utils\ApiUrlRespectUtils;
+use UniPush\Igetui\Template\Utils\HttpManager;
+use UniPush\Igetui\Template\Utils\LangUtils;
+use UniPush\Igetui\IGtListMessage;
+use UniPush\Igetui\IGtTagMessage;
+
 /**
  * VERSION 3.3.2.1
  */
@@ -104,7 +113,7 @@ Class IGeTui
         if($urlList == null || count($urlList) <= 0)
         {
             $h = implode(',', $domainUrlList);
-            throw new Exception("Can not get hosts from ".$h."|error:".$ex);
+            throw new \Exception("Can not get hosts from ".$h."|error:".$ex);
         }
         return $urlList;
     }
@@ -128,9 +137,9 @@ Class IGeTui
 
                     }
                 }
-                catch (Exception $e)
+                catch (\Exception $e)
                 {
-                    throw new Exception("连接异常".$e);
+                    throw new \Exception("连接异常".$e);
                 }
             }
             else if('domain_error' == $rep['result'])
@@ -163,7 +172,7 @@ Class IGeTui
             }
             return true;
         }
-        throw new Exception("appKey Or masterSecret is Auth Failed");
+        throw new \Exception("appKey Or masterSecret is Auth Failed");
     }
 
     public function close()
@@ -251,7 +260,7 @@ Class IGeTui
         $params = array();
         $limit = GTConfig::getMaxLenOfBlackCidList();
         if($limit < count($cidList)){
-            throw new Exception("cid size:".count($cidList)." beyond the limit:".$limit);
+            throw new \Exception("cid size:".count($cidList)." beyond the limit:".$limit);
         }
         $params["action"] = "blackCidAction";
         $params["appkey"] = $this->appkey;
@@ -298,7 +307,7 @@ Class IGeTui
         }
         if(count($targetList) > $limit)
         {
-            throw new Exception("target size:".count($targetList)." beyond the limit:".$limit);
+            throw new \Exception("target size:".count($targetList)." beyond the limit:".$limit);
         }
         $clientIdList = array();
         $aliasList= array();
@@ -409,7 +418,7 @@ Class IGeTui
         $params = array();
         if (!is_null($taskGroupName) && trim($taskGroupName) != ""){
             if(strlen($taskGroupName) > 40){
-                throw new Exception("TaskGroupName is OverLimit 40");
+                throw new \Exception("TaskGroupName is OverLimit 40");
             }
             $params["taskGroupName"] = $taskGroupName;
         }
@@ -450,7 +459,7 @@ Class IGeTui
         {
             return $rep['contentId'];
         }else{
-            throw new Exception("host:[".$this->host."]" + "获取contentId失败:" . $rep);
+            throw new \Exception("host:[".$this->host."]" + "获取contentId失败:" . $rep);
         }
     }
 
@@ -634,7 +643,7 @@ Class IGeTui
         $params["tagList"] = $tagList;
         $limit = GTConfig::getTagListLimit();
         if(count($tagList) > $limit) {
-            throw new Exception("tagList size:".count($tagList)." beyond the limit:".$limit);
+            throw new \Exception("tagList size:".count($tagList)." beyond the limit:".$limit);
         }
         return $this->httpPostJSON($this->host, $params);
     }
@@ -650,7 +659,7 @@ Class IGeTui
 
     public function queryAppPushDataByDate($appId, $date){
         if(!LangUtils::validateDate($date)){
-            throw new Exception("DateError|".$date);
+            throw new \Exception("DateError|".$date);
         }
         $params = array();
         $params["action"] = "queryAppPushData";
@@ -662,7 +671,7 @@ Class IGeTui
 
     public function queryAppUserDataByDate($appId, $date){
         if(!LangUtils::validateDate($date)){
-            throw new Exception("DateError|".$date);
+            throw new \Exception("DateError|".$date);
         }
         $params = array();
         $params["action"] = "queryAppUserData";

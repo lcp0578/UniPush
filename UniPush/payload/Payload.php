@@ -1,4 +1,5 @@
 <?php
+namespace UniPush\Payload;
 
 interface OtherPayload{
 

@@ -1,4 +1,6 @@
 <?php
+
+namespace UniPush\Igetui;
 /**
  * Created by PhpStorm.
  * User: Administrator
@@ -55,7 +57,7 @@ class IGtAPNPayload
             }
 
             if (sizeof($apsMap) == 0) {
-                throw new Exception("format error");
+                throw new \Exception("format error");
             }
             if ($this->contentAvailable > 0) {
                 $apsMap["content-available"] = $this->contentAvailable;
@@ -84,8 +86,8 @@ class IGtAPNPayload
                 $map["_gvp_m_"] = $this->voicePlayMessage;
             }
             return json_encode($map);
-        } catch (Exception $e) {
-            throw new Exception("create apn payload error", -1, $e);
+        } catch (\Exception $e) {
+            throw new \Exception("create apn payload error", -1, $e);
         }
     }
 
@@ -99,7 +101,7 @@ class IGtAPNPayload
     function check_multiMedias()
     {
         if(sizeof($this -> multiMedias) > 3) {
-            throw new RuntimeException("MultiMedias size overlimit");
+            throw new \RuntimeException("MultiMedias size overlimit");
         }
 
         $needGeneRid = false;
@@ -113,7 +115,7 @@ class IGtAPNPayload
             }
 
             if($media->get_type() == null || $media->get_url() == null) {
-                throw new RuntimeException("MultiMedia resType and resUrl can't be null");
+                throw new \RuntimeException("MultiMedia resType and resUrl can't be null");
             }
         }
 

@@ -1,4 +1,5 @@
 <?php
+namespace UniPush\Payload;
 
 Class VOIPPayload {
     var $voIPPayload;
@@ -7,7 +8,7 @@ Class VOIPPayload {
     {
         $payload = $this->voIPPayload;
         if($payload == null || empty($payload)){
-            throw new RuntimeException("payload cannot be empty");
+            throw new \RuntimeException("payload cannot be empty");
         }
         $params = array();
         if($payload != null){

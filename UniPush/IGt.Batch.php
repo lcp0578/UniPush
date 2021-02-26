@@ -1,4 +1,11 @@
 <?php
+namespace UniPush;
+
+use UniPush\Igetui\Template\Utils\LangUtils;
+use UniPush\Igetui\Template\Utils\GTConfig;
+use UniPush\Igetui\SingleBatchRequest;
+use UniPush\Igetui\SingleBatchItem;
+
 /**
  * Created by PhpStorm.
  * User: Administrator
@@ -33,7 +40,7 @@ class IGtBatch
     public function add($message, $target)
     {
         if ($this->seqId >= 5000) {
-            throw new Exception("Can not add over 5000 message once! Please call submit() first.");
+            throw new \Exception("Can not add over 5000 message once! Please call submit() first.");
         } else {
             $this->seqId += 1;
             $innerMsg = new SingleBatchItem();
