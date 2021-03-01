@@ -2,6 +2,10 @@
 
 namespace UniPush\Igetui;
 
+use UniPush\Protobuf\Type\PBEnum;
+use UniPush\Protobuf\PBMessage;
+use UniPush\Protobuf\Type\PBBool;
+
 class CmdID extends PBEnum
 {
   const GTHEARDBT  = 0;

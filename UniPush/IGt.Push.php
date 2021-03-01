@@ -13,6 +13,7 @@ use UniPush\Igetui\IGtTagMessage;
  */
 header("Content-Type: text/html; charset=utf-8");
 require_once(dirname(__FILE__) . '/' . 'protobuf/pb_message.php');
+require_once(dirname(__FILE__). '/' . 'protobuf/encoding/pb_base128.php');
 require_once(dirname(__FILE__) . '/' . 'igetui/IGt.Req.php');
 require_once(dirname(__FILE__) . '/' . 'igetui/IGt.Message.php');
 require_once(dirname(__FILE__) . '/' . 'igetui/IGt.AppMessage.php');
@@ -25,6 +26,7 @@ require_once(dirname(__FILE__) . '/' . 'igetui/template/IGt.NotificationTemplate
 require_once(dirname(__FILE__) . '/' . 'igetui/template/IGt.TransmissionTemplate.php');
 require_once(dirname(__FILE__) . '/' . 'igetui/template/IGt.NotyPopLoadTemplate.php');
 require_once(dirname(__FILE__) . '/' . 'igetui/template/IGt.APNTemplate.php');
+require_once(dirname(__FILE__) . '/' . 'igetui/template/notify/IGt.Notify.php');
 require_once(dirname(__FILE__) . '/' . 'igetui/utils/GTConfig.php');
 require_once(dirname(__FILE__) . '/' . 'igetui/utils/HttpManager.php');
 require_once(dirname(__FILE__) . '/' . 'igetui/utils/ApiUrlRespectUtils.php');

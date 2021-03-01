@@ -1,5 +1,6 @@
 <?php
 namespace UniPush\Igetui\Template\Notify;
+
 /**
  * Class IGtNotify
  */

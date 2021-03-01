@@ -2,6 +2,11 @@
 
 namespace UniPush\Protobuf;
 
+use UniPush\Protobuf\Encoding\base128varint;
+use UniPush\Protobuf\Type\PBString;
+use UniPush\Igetui\NotifyInfo_Type;
+use UniPush\Protobuf\Type\PBBool;
+
 /**
  * Including of all files needed to parse messages
  * @author Nikolai Kordulla
@@ -234,7 +239,27 @@ abstract class PBMessage
      */
     protected function _add_arr_value($index)
     {
-        return $this->values[$index][] = new $this->fields[$index]();
+        switch ($this->fields[$index]){
+            case 'PBString':
+                $class = 'UniPush\Protobuf\Type\PBString';
+                break;
+            case 'NotifyInfo_Type':
+                $class = 'UniPush\Igetui\NotifyInfo_Type';
+                break;
+            case 'PBBool':
+                $class = 'UniPush\Protobuf\Type\PBBool';
+                break;
+            case 'PBInt':
+                $class = 'UniPush\Protobuf\Type\PBInt';
+                break;
+            case 'ActionChain':
+                $class = 'UniPush\Igetui\ActionChain';
+                break;
+            default:
+                $class = $this->fields[$index];
+                break;
+        }
+        return $this->values[$index][] = new $class();
     }
 
     /**
@@ -270,7 +295,27 @@ abstract class PBMessage
         }
         else
         {
-            $this->values[$index] = new $this->fields[$index]();
+            switch ($this->fields[$index]){
+                case 'PBString':
+                    $class = 'UniPush\Protobuf\Type\PBString';
+                    break;
+                case 'NotifyInfo_Type':
+                    $class = 'UniPush\Igetui\NotifyInfo_Type';
+                    break;
+                case 'PBBool':
+                    $class = 'UniPush\Protobuf\Type\PBBool';
+                    break;
+                case 'PBInt':
+                    $class = 'UniPush\Protobuf\Type\PBInt';
+                    break;
+                case 'ActionChain_Type':
+                    $class = 'UniPush\Igetui\ActionChain_Type';
+                    break;
+                default:
+                    $class = $this->fields[$index];
+                    break;
+            }
+            $this->values[$index] = new $class() ;
             $this->values[$index]->value = $value;
         }
     }

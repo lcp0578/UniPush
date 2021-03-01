@@ -1,6 +1,10 @@
 <?php
 namespace UniPush\Igetui\Template;
 
+use UniPush\Igetui\PushInfo;
+use UniPush\Igetui\IGtAPNPayload;
+use UniPush\Igetui\Transparent;
+
 require_once(dirname(__FILE__) . '/' . '../utils/ApnsUtils.php');
 require_once(dirname(__FILE__) . '/' . '../IGt.APNPayload.php');
 require_once(dirname(__FILE__) . '/' . './notify/SmsMessage.php');

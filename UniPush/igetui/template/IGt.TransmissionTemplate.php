@@ -1,6 +1,12 @@
 <?php
 namespace UniPush\Igetui\Template;
 
+use UniPush\Igetui\NotifyInfo;
+use UniPush\Igetui\Template\Utils\GTConfig;
+use UniPush\Igetui\ActionChain;
+use UniPush\Igetui\AppStartUp;
+use UniPush\Igetui\ActionChain_Type;
+
 class IGtTransmissionTemplate extends IGtBaseTemplate {
 
 	var $transmissionType;

@@ -87,6 +87,7 @@ class IGtAPNPayload
             }
             return json_encode($map);
         } catch (\Exception $e) {
+            dump($e);
             throw new \Exception("create apn payload error", -1, $e);
         }
     }
@@ -197,7 +198,7 @@ class DictionaryAlertMsg implements ApnMsg{
         if ($this->subtitle != null && $this->subtitle != "") {
             $alertMap["subtitle"] = $this->subtitle;
         }
-        if (sizeof($this->subtitleLocArgs) > 0) {
+        if (is_array($this->subtitleLocArgs) && sizeof($this->subtitleLocArgs) > 0 || !empty($this->subtitleLocArgs)) {
         $alertMap["subtitle-loc-args"] = $this->subtitleLocArgs;
         }
         if ($this->subtitleLocKey != null && $this->subtitleLocKey != "") {
