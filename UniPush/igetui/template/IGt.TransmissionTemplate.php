@@ -59,6 +59,10 @@ class IGtTransmissionTemplate extends IGtBaseTemplate {
 		return 'TransmissionMsg';
 	}
 
+	function get_data()
+	{
+	    return $this;
+	}
 
 	function  set_transmissionType($transmissionType) {
 		$this->transmissionType = $transmissionType;
