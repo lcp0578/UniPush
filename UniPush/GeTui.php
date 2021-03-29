@@ -33,7 +33,7 @@ require_once(dirname(__FILE__) . '/' . 'igetui/utils/ApiUrlRespectUtils.php');
 require_once(dirname(__FILE__) . '/' . 'igetui/utils/LangUtils.php');
 
 
-Class IGeTui
+Class GeTui
 {
     var $appkey; //第三方 标识
     var $masterSecret; //第三方 密钥
