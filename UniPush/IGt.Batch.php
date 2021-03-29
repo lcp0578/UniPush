@@ -13,7 +13,7 @@ use UniPush\Igetui\SingleBatchItem;
  * Time: 下午3:45
  */
 header("Content-Type: text/html; charset=utf-8");
-require_once(dirname(__FILE__) . '/' . 'IGt.Push.php');
+require_once(dirname(__FILE__) . '/' . 'GeTui.php');
 
 class IGtBatch
 {

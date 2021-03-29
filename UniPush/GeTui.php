@@ -74,16 +74,16 @@ Class GeTui
     {
         if($hosts == null || count($hosts) == 0)
         {
-            $hosts = isset(IGeTui::$appkeyUrlList[$this->appkey])?IGeTui::$appkeyUrlList[$this->appkey]:null;
+            $hosts = isset(GeTui::$appkeyUrlList[$this->appkey])?GeTui::$appkeyUrlList[$this->appkey]:null;
             if($hosts == null || count($hosts) == 0)
             {
                 $hosts = $this->getOSPushDomainUrlList($this->domainUrlList,$this->appkey);
-                IGeTui::$appkeyUrlList[$this->appkey] = $hosts;
+                GeTui::$appkeyUrlList[$this->appkey] = $hosts;
             }
         }
         else
         {
-            IGeTui::$appkeyUrlList[$this->appkey] = $hosts;
+            GeTui::$appkeyUrlList[$this->appkey] = $hosts;
         }
         $this->host = ApiUrlRespectUtils::getFastest($this->appkey, $hosts);
         return $this->host;
