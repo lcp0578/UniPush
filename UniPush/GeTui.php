@@ -58,7 +58,6 @@ Class GeTui
 
         $this->useSSL = ($ssl == NULL ? false : $ssl);
 
-
         if ($domainUrl == NULL || strlen($domainUrl) == 0)
         {
             $this->domainUrlList =  GTConfig::getDefaultDomainUrl($this->useSSL);
