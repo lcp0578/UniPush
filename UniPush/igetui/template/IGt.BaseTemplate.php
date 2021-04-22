@@ -235,7 +235,7 @@ class IGtBaseTemplate
         }
         $len = strlen($payload);
         if ($len > IGtAPNPayload::$PAYLOAD_MAX_BYTES) {
-            throw new Exception("APN payload length overlength (" . $len . ">" . IGtAPNPayload::$PAYLOAD_MAX_BYTES . ")");
+            throw new \Exception("APN payload length overlength (" . $len . ">" . IGtAPNPayload::$PAYLOAD_MAX_BYTES . ")");
         }
         $pushInfo = $this->get_pushInfo();
         $pushInfo->set_apnJson($payload);
