@@ -77,9 +77,9 @@ class IGtBaseTemplate
         $ss = (string)strtotime($begin) * 1000;
         $e = (string)strtotime($end) * 1000;
         if ($ss <= 0 || $e <= 0)
-            throw new Exception("DateFormat: yyyy-MM-dd HH:mm:ss");
+            throw new \Exception("DateFormat: yyyy-MM-dd HH:mm:ss");
         if ($ss > $e)
-            throw new Exception("startTime should be smaller than endTime");
+            throw new \Exception("startTime should be smaller than endTime");
 
         $this->duration = $ss . "-" . $e;
 

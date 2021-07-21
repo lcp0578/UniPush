@@ -16,7 +16,7 @@ class ApiUrlRespectUtils
     {
         if ($hosts == null || count($hosts)==0)
         {
-            throw new Exception("Hosts cann't be null or size must greater than 0");
+            throw new \Exception("Hosts cann't be null or size must greater than 0");
         }
         if(isset(ApiUrlRespectUtils::$appkeyAndFasterHost[$appkey]) && count(array_diff($hosts,isset(ApiUrlRespectUtils::$appKeyAndHost[$appkey])?ApiUrlRespectUtils::$appKeyAndHost[$appkey]:null)) == 0)
         {

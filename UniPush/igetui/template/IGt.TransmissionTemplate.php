@@ -74,7 +74,7 @@ class IGtTransmissionTemplate extends IGtBaseTemplate {
 
     function set3rdNotifyInfo($notify) {
         if ($notify->get_title() == null || $notify -> get_content() == null) {
-            throw new Exception("notify title or content cannot be null");
+            throw new \Exception("notify title or content cannot be null");
         }
 
         $notifyInfo = new NotifyInfo();
@@ -90,11 +90,11 @@ class IGtTransmissionTemplate extends IGtBaseTemplate {
 
             if($notify -> get_intent() != null){
                 if(strlen($notify -> get_intent()) > GTConfig::getNotifyIntentLimit()){
-                    throw new Exception("intent size overlimit " . GTConfig::getNotifyIntentLimit());
+                    throw new \Exception("intent size overlimit " . GTConfig::getNotifyIntentLimit());
                 }
                 //不符合intent的格式要求
                 if(!preg_match(self::pattern,$notify -> get_intent())){
-                    throw new Exception("intent format err,should start with \"intent:#Intent;\",end \"with ;end\"  ");
+                    throw new \Exception("intent format err,should start with \"intent:#Intent;\",end \"with ;end\"  ");
                 }
 
                 $notifyInfo -> set_intent($notify -> get_intent());

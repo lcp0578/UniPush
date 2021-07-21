@@ -187,7 +187,7 @@ abstract class PBMessage
             if (!isset($this->fields[$messtypes['field']]))
             {
                 // field is unknown so just ignore it
-                // throw new Exception('Field ' . $messtypes['field'] . ' not present ');
+                // throw new \Exception('Field ' . $messtypes['field'] . ' not present ');
                 if ($messtypes['wired'] == PBMessage::WIRED_LENGTH_DELIMITED)
                 {
                     $consume = new PBString($this->reader);
@@ -198,7 +198,7 @@ abstract class PBMessage
                 }
                 else
                 {
-                    throw new Exception('I dont understand this wired code:' . $messtypes['wired']);
+                    throw new \Exception('I dont understand this wired code:' . $messtypes['wired']);
                 }
 
                 // perhaps send a warning out
@@ -217,7 +217,7 @@ abstract class PBMessage
                 $index = count($this->values[$messtypes['field']]) - 1;
                 if ($messtypes['wired'] != $this->values[$messtypes['field']][$index]->wired_type)
                 {
-                    throw new Exception('Expected type:' . $messtypes['wired'] . ' but had ' . $this->fields[$messtypes['field']]->wired_type);
+                    throw new \Exception('Expected type:' . $messtypes['wired'] . ' but had ' . $this->fields[$messtypes['field']]->wired_type);
                 }
                 $this->values[$messtypes['field']][$index]->ParseFromArray();
             }
@@ -226,7 +226,7 @@ abstract class PBMessage
                 $this->values[$messtypes['field']] = new $this->fields[$messtypes['field']]($this->reader);
                 if ($messtypes['wired'] != $this->values[$messtypes['field']]->wired_type)
                 {
-                    throw new Exception('Expected type:' . $messtypes['wired'] . ' but had ' . $this->fields[$messtypes['field']]->wired_type);
+                    throw new \Exception('Expected type:' . $messtypes['wired'] . ' but had ' . $this->fields[$messtypes['field']]->wired_type);
                 }
                 $this->values[$messtypes['field']]->ParseFromArray();
             }

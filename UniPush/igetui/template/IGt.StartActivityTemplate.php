@@ -122,11 +122,11 @@ class IGtStartActivityTemplate extends IGtBaseTemplate
 
     function set_intent($intent){
         if(strlen($intent) > GTConfig::getStartActivityIntentLimit()){
-            throw new Exception("intent size overlimit " . GTConfig::getStartActivityIntentLimit());
+            throw new \Exception("intent size overlimit " . GTConfig::getStartActivityIntentLimit());
         }
         //不符合intent的格式要求
         if(!preg_match(self::pattern,$intent)){
-           throw new Exception("intent format err,should start with \"intent:#Intent;\",end \"with ;end\"  ");
+           throw new \Exception("intent format err,should start with \"intent:#Intent;\",end \"with ;end\"  ");
         }
 
         $this -> intent = $intent;
